@@ -1,0 +1,49 @@
+.course-item {
+  display: flex;
+  flex-direction: column; 
+  cursor: pointer;
+  overflow: hidden; 
+  height: 100%; 
+  transition: 0.3s;
+  
+  /* Key styles for the container */
+  gap: 0; 
+  box-shadow: 0 5px 18px rgba(0,0,0,0.12); 
+  border-radius: 12px;
+}
+
+.course-item:hover {
+  transform: translateY(-5px); 
+}
+
+.subject-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sets the height of the text area to match the grid look */
+  height: 180px; 
+  
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: #ffffff;
+  
+  /* Matches the top border radius of the parent .course-item */
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  
+  box-shadow: none;
+  transition: none; 
+}
+
+.subject-card:hover {
+  background: #0d6efd;
+  color: white;
+}
+
+/* Fixes the image size by targeting it inside the .course-item */
+.course-item img {
+  width: 100%; 
+  height: auto; 
+  display: block;
+}

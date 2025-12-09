@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gyansetu Tutor Signup</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="registration.css">
+</head>
+
+<body>
+
+  <!-- Dark Mode Toggle -->
+  <button id="modeToggle" class="btn btn-light position-absolute top-0 end-0 m-3">🌙</button>
+
+  <div class="signup-container">
+
+    <div class="glass-card p-4">
+
+<div class="text-center mb-3">
+  
+</div>
+      <h3 class="text-center fw-bold text-white mb-3">Tutor Registration</h3>
+
+      <form>
+
+        <!-- PERSONAL DETAILS -->
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label text-white">Full Name</label>
+            <input type="text" class="form-control" required>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label text-white">Phone Number</label>
+            <input type="text" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label text-white">Email</label>
+          <input type="email" class="form-control" required>
+        </div>
+
+        <!-- TEACHING INFORMATION -->
+      
+
+        <div class="mb-3">
+          <label class="form-label text-white">Subjects You Teach</label>
+          <select id="subjects" class="form-select" multiple>
+            <option>Math</option>
+            <option>O.math</option>
+            <option>Science</option>
+            <option>English</option>
+            <option>Computer</option>
+            <option>Social Studies</option>
+            <option>Physics</option>
+            <option>Biology</option>
+            <option>Chemistry</option>
+          </select>
+        </div>
+        <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label text-white">Experience</label>
+          <select id="experience" class="form-select">
+            <option value="0">No experience</option>
+            <option value="1">1 Year</option>
+            <option value="2">2 Years</option>
+            <option value="3">3 Years</option>
+            <option value="4">4+ Years</option>
+          </select>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label class="form-label text-white">Highest Qualification</label>
+          <select id="qualification" class="form-select">
+            <option>+2 / A Levels</option>
+            <option>Bachelor’s</option>
+            <option>Master’s</option>
+            <option>MPhil / PhD</option>
+          </select>
+        </div>
+        </div>
+      </form>
+        </form>
+
+        <!-- DOCUMENTS -->
+        <h6 class="section-title">Upload Documents</h6>
+
+        <div class="mb-3">
+          <label class="form-label text-white">Certificates (Multiple allowed)</label>
+          <input type="file" class="form-control" multiple>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label text-white">Profile Photo</label>
+          <input type="file" class="form-control">
+        </div>
+
+
+
+        <!-- LOGIN DETAILS -->
+
+        <div class="mb-3 position-relative">
+          <label class="form-label text-white">Password</label>
+          <input type="password" id="password" class="form-control">
+          <span class="toggle-password" id="togglePass">👁️</span>
+        </div>
+
+        <div class="mb-4 position-relative">
+          <label class="form-label text-white">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="form-control">
+          <span class="toggle-password" id="toggleConfirm">👁️</span>
+        </div>
+
+        <button class="btn btn-light w-100 fw-bold">Create Account</button>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script>
+    // Initialize Select2 dropdowns
+    $(document).ready(function() {
+      $("#subjects").select2();
+      $("#experience").select2();
+      $("#qualification").select2();
+    });
+
+    // Password Toggle
+    document.getElementById('togglePass').onclick = () => {
+      const p = document.getElementById('password');
+      p.type = p.type === "password" ? "text" : "password";
+    };
+    document.getElementById('toggleConfirm').onclick = () => {
+      const p = document.getElementById('confirmPassword');
+      p.type = p.type === "password" ? "text" : "password";
+    };
+
+    // Dark Mode
+    document.getElementById("modeToggle").onclick = function () {
+      document.body.classList.toggle("dark-mode");
+      this.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    };
+  </script>
+
+</body>
+</html>
+
+
