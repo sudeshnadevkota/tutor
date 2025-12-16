@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Tutor - GyanSetu</title>
+    <link rel="stylesheet" href="../css/findtutor.css">
+</head>
+<body>
+    <!-- Navigation -->
+     <div class="navbar">
+        <div class="logo">Gyansetu</div>
+        <img src="../photo/logo.png">
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+             <a href="courses.html">Courses</a>
+             <a href="contact.html">Contact us</a>
+            <a href="about US .html">About Us</a>
+            <a href="login.html">Login</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="find-tutor-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="page-header">
+                <h1>Find your perfect private tutor</h1>
+            </div>
+
+            <!-- Session Type Tabs -->
+            <div class="session-tabs">
+                <button class="tab-btn active" data-session="all">All</button>
+                <button class="tab-btn" data-session="private">Private Sessions</button>
+                <button class="tab-btn" data-session="group">Group Sessions</button>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <label>Level</label>
+                    <select id="levelFilter" class="filter-select">
+                        <option value="">Choose level or class</option>
+                        <option value="middle">Middle School (Class 6-8)</option>
+                        <option value="secondary">Secondary (Class 9-10)</option>
+                        <option value="higher-secondary">Higher Secondary (Class 11-12)</option>
+                        <option value="college">College/University</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Choose subject</label>
+                    <select id="subjectFilter" class="filter-select">
+                        <option value="">Choose subject</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="physics">Physics</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="biology">Biology</option>
+                        <option value="computer">Computer Science</option>
+                        <option value="english">English</option>
+                         <option value="social studies">Social Studies</option>
+                         <option value="O.Math">O.Math</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Tutor mode</label>
+                    <select id="modeFilter" class="filter-select">
+                        <option value="">Search by tutor mode</option>
+                        <option value="online">Online</option>  
+                        <option value="home">At Student's Home</option>
+                        <option value="tutor-place">At Tutor's Place</option>
+                        <option value="hybrid">Hybrid (Online + Offline)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label>Tutor location</label>
+                    <select id="locationFilter" class="filter-select">
+                        <option value="">Search by location</option>
+                        <option value="Thali">Thali</option>
+                        <option value="Jorpati">Jorpati</option>
+                        <option value="Bouddha">Bouddha</option>
+                        <option value="Baneshwor">Baneshwor</option>
+                        <option value="Chabahil">Chabahil</option>
+                        <option value="Lalitpur">Lalitpur</option>
+                        <option value="Bagbazar">Bagabazar</option>
+                        <option value="Basantapur">Basantapur</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Count -->
+            <div class="results-info">
+                <p><span id="tutorCount">156</span> tutors available for private lessons</p>
+                <button id="clearFilters" class="clear-btn">Clear all filters</button>
+            </div>
+
+            <!-- Tutors Grid -->
+            <div class="tutors-container">
+                <div class="tutors-list" id="tutorsList">
+                    <!-- Tutor cards will be dynamically inserted here -->
+                </div>
+
+                <!-- Tips Sidebar -->
+                <div class="tips-sidebar">
+                    <div class="tips-card">
+                        <div class="tips-video">
+                            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80" alt="Tips">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <h3>Tips to find the perfect tutor</h3>
+                        <p>Choosing the right tutor online requires careful consideration. Here are tips to help you make an informed decision.</p>
+                        <ul class="tips-list">
+                            <li>✓ Filter your requirements</li>
+                            <li>✓ Read reviews carefully</li>
+                            <li>✓ Check tutor's experience</li>
+                            <li>✓ Book a trial lesson first</li>
+                            <li>✓ Compare multiple tutors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Book Trial Modal -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book Trial Lesson</h2>
+            <div id="modalTutorInfo"></div>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <input type="date" id="lessonDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Select Time</label>
+                    <input type="time" id="lessonTime" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" id="studentEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea id="notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Send Message</h2>
+            <div id="messageTutorInfo"></div>
+            <form id="messageForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" id="senderName" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" id="senderEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="messageText" rows="5" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+<script src="../javascript/findtutor.js"></script>
+</body>
+</html>
